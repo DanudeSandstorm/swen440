@@ -1,0 +1,5 @@
+package career.fair.app;
+
+public class CareerFairApplication extends Application<AppConfiguration> {
+
+}
