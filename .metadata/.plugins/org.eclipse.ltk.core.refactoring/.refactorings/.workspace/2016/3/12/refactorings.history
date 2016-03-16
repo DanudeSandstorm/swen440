@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;system&apos;" deleteContents="true" description="Delete resource &apos;system&apos;" element1="/system" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1458079997348"/>&#x0A;<refactoring comment="Rename resource &apos;dropwizard-core&apos; to &apos;Career-Fair-App&apos;" description="Rename resource &apos;dropwizard-core&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/dropwizard-core" name="Career-Fair-App" stamp="1458080464658" updateReferences="true"/>
-</session>
