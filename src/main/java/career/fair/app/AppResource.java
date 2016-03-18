@@ -11,8 +11,11 @@ import java.util.concurrent.atomic.AtomicLong;
 public class AppResource {
 	private boolean crash;
 	
-	public AppResource(){
+	
+	public AppResource(boolean crash){
+		this.crash = crash;
 		
 	}
 	
 }
+

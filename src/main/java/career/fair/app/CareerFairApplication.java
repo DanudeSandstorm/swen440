@@ -9,8 +9,14 @@ public class CareerFairApplication extends Application<AppConfiguration> {
 		new CareerFairApplication().run(args);
 	}
 	@Override
-	public void run(AppConfiguration arg0, Environment arg1) throws Exception {
-		// TODO Auto-generated method stub
+	public void run(AppConfiguration configuration, Environment environment) throws Exception {
+		final AppResource resource = new AppResource(
+		        configuration.getCrash()
+		    );
+		final TemplateHealthCheck healthCheck =
+		        new TemplateHealthCheck(configuration.getCrash());
+		    environment.healthChecks().register("template", healthCheck);
+		    environment.jersey().register(resource);
 		
 	}
 
