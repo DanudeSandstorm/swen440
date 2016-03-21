@@ -7,31 +7,18 @@ import io.dropwizard.setup.Environment;
 
 public class CareerFairApplication extends Application<CareerFairConfiguration> {
 	
-	@Override
-    public String getName() {
-        return "hello-world";
-    }
-
-    @Override
-    public void initialize(Bootstrap<CareerFairConfiguration> bootstrap) {
-        // nothing to do yet
-    }
-	
 	public static void main(String[] args) throws Exception {
-		System.out.println("Oitati");
-		args = new String[] { "server", "career-fair.yml" };
+		//args = new String[] { "server", "career-fair.yml" };
 		new CareerFairApplication().run(args);
 	}
 	
 	@Override
 	public void run(CareerFairConfiguration configuration, Environment environment) throws Exception {
-		System.out.println("Potato");
 		final CareerFairResource resource = new CareerFairResource(
-				configuration.getTemplate(),
-		        configuration.getDefaultName()
+				configuration.getCrash()
 		    );
 		final TemplateHealthCheck healthCheck =
-		        new TemplateHealthCheck(configuration.getTemplate());
+		        new TemplateHealthCheck(configuration.getCrash());
 		
 		environment.healthChecks().register("template", healthCheck);
 		environment.jersey().register(resource);

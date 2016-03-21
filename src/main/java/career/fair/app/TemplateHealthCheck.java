@@ -4,19 +4,17 @@ import com.codahale.metrics.health.HealthCheck;
 import java.util.Random;
 
 public class TemplateHealthCheck extends HealthCheck {
-    private final String template;
+    private final Boolean check;
     private Random rand;
     
-    public TemplateHealthCheck(String template) {
-        this.template = template;
+    public TemplateHealthCheck(Boolean check) {
+        this.check = check;
         rand = new Random();
     }
 
     @Override
     protected Result check() throws Exception {
-        final String saying = String.format(template, "TEST");
-        
-        int num = rand.nextInt(100);
+    	int num = rand.nextInt(100);
         
         // If the result is even, return unhealthy
         if (num % 53 == 0)
@@ -24,7 +22,7 @@ public class TemplateHealthCheck extends HealthCheck {
         	return Result.unhealthy("template doesn't include a name");
         }
         
-        if (!saying.contains("TEST")) {
+        if (!check) {
             return Result.unhealthy("template doesn't include a name");
         }
         
